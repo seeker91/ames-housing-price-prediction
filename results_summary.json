@@ -1,0 +1,105 @@
+{
+  "n_rows": 2930,
+  "n_train": 2344,
+  "n_test": 586,
+  "median_price": 160000.0,
+  "mean_price": 180796.0600682594,
+  "price_skew": 1.7435000757376466,
+  "log_price_skew": -0.014772659537213845,
+  "top_correlations": {
+    "OverallQual": 0.799,
+    "GrLivArea": 0.707,
+    "GarageCars": 0.648,
+    "GarageArea": 0.64,
+    "TotalBsmtSF": 0.633
+  },
+  "new_feature_corr": {
+    "HouseAge": -0.559,
+    "RemodAge": -0.535,
+    "TotalLivingArea": 0.714,
+    "TotalBath": 0.636,
+    "TotalPorchSF": 0.384,
+    "Qual_x_Area": 0.845
+  },
+  "neighborhood_top3": {
+    "StoneBr": 319000.0,
+    "NridgHt": 317750.0,
+    "NoRidge": 302000.0
+  },
+  "neighborhood_bottom3": {
+    "IDOTRR": 106500.0,
+    "BrDale": 106000.0,
+    "MeadowV": 88250.0
+  },
+  "median_price_qual5": 133000.0,
+  "median_price_qual10": 451950.0,
+  "anova": {
+    "neighborhood": {
+      "F": 135.3588626791864,
+      "p": 6.3220688240481545e-233
+    },
+    "house_style": {
+      "F": 65.30389600118491,
+      "p": 5.644098912863055e-53
+    },
+    "overall_qual": {
+      "F": 1157.158439409181,
+      "p": 0.0
+    }
+  },
+  "results": [
+    {
+      "Model": "XGBoost (tuned)",
+      "RMSE ($)": 22047.0,
+      "MAE ($)": 13468.0,
+      "R2": 0.939
+    },
+    {
+      "Model": "Random Forest (tuned)",
+      "RMSE ($)": 25975.0,
+      "MAE ($)": 15231.0,
+      "R2": 0.916
+    },
+    {
+      "Model": "Ridge (alpha=1)",
+      "RMSE ($)": 27820.0,
+      "MAE ($)": 15413.0,
+      "R2": 0.903
+    },
+    {
+      "Model": "Linear Regression",
+      "RMSE ($)": 28737.0,
+      "MAE ($)": 15069.0,
+      "R2": 0.897
+    }
+  ],
+  "best_model": "XGBoost (tuned)",
+  "best_tree_model": "XGBoost",
+  "best_params_rf": {
+    "model__n_estimators": 300,
+    "model__min_samples_split": 5,
+    "model__min_samples_leaf": 1,
+    "model__max_features": 0.6,
+    "model__max_depth": 20
+  },
+  "best_params_xgb": {
+    "model__subsample": 0.8,
+    "model__reg_lambda": 1,
+    "model__n_estimators": 500,
+    "model__max_depth": 4,
+    "model__learning_rate": 0.03,
+    "model__colsample_bytree": 0.7
+  },
+  "top_features": {
+    "num__Qual_x_Area": 0.127,
+    "num__OverallQual": 0.049,
+    "cat__CentralAir_N": 0.045,
+    "cat__ExterQual_TA": 0.044,
+    "cat__CentralAir_Y": 0.032,
+    "num__GarageCars": 0.029,
+    "cat__Neighborhood_OldTown": 0.027,
+    "num__Fireplaces": 0.026,
+    "cat__MSZoning_RM": 0.024,
+    "cat__PavedDrive_Y": 0.024
+  }
+}
